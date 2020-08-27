@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap');
+@import "materialize.min.css";
+
+body{
+    font-size: 2vn;
+}
+.span{
+    font-family: 'Raleway', sans-serif;
+    color: #4CAF50;
+}
+.nav {
+    box-shadow: none;
+}
+.nav a {
+    font-family: 'Raleway', sans-serif;
+    color : #4CAF50;
+}
+.mt-5{
+    margin-top: 50px;
+}
+.mt-3{
+    margin-top: 30px;
+}
+.card {
+    border-radius: 30px;
+    height: 100px;
+}
+.membaca {
+    height: 150px;
+    width: 150px;
+}
+
+table th {
+    color: #4CAF50;
+}
