@@ -28,7 +28,7 @@ saat paket sudah selesai tambahkan homepage di berkas <b>package.json</b>
 
 masih pada <b>package.json</b> tambahkan kata seperti ini di bagian script
 ```
-  "predeploy" : "npm run build",</br>
+  "predeploy" : "npm run build",
   "deploy" : "gh-pages -d dist"
 ```
 
