@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
     entry: {
         home:'./src/index.js',
-        surah:'./src/surah.js'
+        view:'./src/view.js'
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -36,24 +36,24 @@ module.exports = {
             chunks:['home']
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "src/surah.html"),
-            filename: "surah.html",
-            chunks:['surah']
+            template: path.resolve(__dirname, "src/view.html"),
+            filename: "view.html",
+            chunks:['view']
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "src/styles/view/nav.html"),
-            filename: "styles/view/nav.html",
+            template: path.resolve(__dirname, "src/app/view/nav.html"),
+            filename: "app/view/nav.html",
             chunks:[]
         }),
-        new workboxPlugin.GenerateSW({
-            swDest: 'sw.js',
-            clientsClaim: true,
-            skipWaiting: true,
-            runtimeCaching: [{
-              urlPattern: new RegExp('https://api.banghasan.com'),
-              handler: 'StaleWhileRevalidate'
-            }]
-        }),
+        // new workboxPlugin.GenerateSW({
+        //     swDest: 'sw.js',
+        //     clientsClaim: true,
+        //     skipWaiting: true,
+        //     runtimeCaching: [{
+        //       urlPattern: new RegExp('https://api.banghasan.com'),
+        //       handler: 'StaleWhileRevalidate'
+        //     }]
+        // }),
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -65,8 +65,8 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, 'src/styles/pages'),
-                    to: path.resolve(__dirname, 'dist/styles/pages')
+                    from: path.resolve(__dirname, 'src/app/pages'),
+                    to: path.resolve(__dirname, 'dist/app/pages')
                 }
             ]
         }),

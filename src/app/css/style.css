@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap");
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import "materialize-css/dist/css/materialize.min.css";
+@import "aos/dist/aos.css";
+
+.bold {
+  font-family: "Raleway", sans-serif;
+  color: #4caf50;
+}
+
+.nav {
+  box-shadow: none;
+}
+
+.nav a {
+  font-family: "Raleway", sans-serif;
+  color: #4caf50;
+}
+
+/* margin */
+.mt-5 {
+  margin-top: 50px;
+}
+
+.mt-3 {
+  margin-top: 30px;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+/* end margin */
+
+.card {
+  border-radius: 20px;
+  height: 100px;
+}
+
+.img-res {
+  width: 100%;
+}
+
+.color {
+  background-color: #6dce80;
+}

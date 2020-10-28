@@ -1,6 +1,5 @@
-import { baseUrl, status, json, error } from './api_config.js';
-import { sekarang, currentDate} from './../js/widget.js';
-import { updateTime, greeting, day, hari} from './../js/time.js';
+import { baseUrl, status, json, error } from '../config/api_config.js';
+import { updateTime, day, hari, sekarang, currentDate} from '../js/time.js';
 
 //menampilkan waktu solat
 const waktuSolat = () => {
@@ -16,7 +15,7 @@ const waktuSolat = () => {
             if (y > waktu.jadwal.data.isya || y < waktu.jadwal.data.subuh){
                 tahu = '<b>Subuh</b> pukul <b>' + waktu.jadwal.data.subuh + '</b>';
             } else if ( y > waktu.jadwal.data.subuh && y < waktu.jadwal.data.dzuhur){
-                tahu = '<b>Dzuhur</b> pukul <b>' + waktu.jadwal.data.dzuhur + '</b>';
+                tahu = '<b>Dzuhur</b> pukul <b>' + waktu.jadwal.data.dzuhur + '</b> WIB';
             } else if ( y > waktu.jadwal.data.dzuhur && y < waktu.jadwal.data.ashar){
                 tahu = '<b>Ashar</b> pukul <b>' + waktu.jadwal.data.ashar + '</b>';
             } else if ( y > waktu.jadwal.data.ashar && y < waktu.jadwal.data.maghrib){
@@ -35,51 +34,38 @@ const waktuSolat = () => {
         updateTime();
 
         waktuSolat.innerHTML += `
-            <div class="row">
-                <div class="col s4 m6">
-                    <center><img src="./../../images/mesjid.png" class="membaca right-align" alt="membaca"></center>
-                </div>
-                <div class="col s8 m6">
-                    <p><span>${greeting()}</span></p>
-                    <h4><span class="time span"></span></h4>
-                    <p><b>${hari(day)}, <span class="date"></span></b></p>
-                </div>
-                
+            <div class="center" data-aos="slide-right">
+                <h4><span class="date"></span> ${hari[day]}</h4>
+                <h4 class="bold"><span class="time"></span> WIB</h4>
             </div>
-            <table class="table striped">
+            <table class="card table centered mt-2" data-aos="slide-right">
                 <thead>
                     <tr>
-                        <th colspan="3" class="center-align">Jangan lupa solat ${pemberitahuan(sekarang)}</th>
+                        <th colspan="2">${pemberitahuan(sekarang)}</th>
                     </tr>
                     <tr>
-                        <th scope="col">No</th>
                         <th scope="col">Sholat</th>
                         <th scope="col">Waktu</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <tr>
-                        <th scope="row">1</th>
                         <td>Subuh</td>
                         <td>${waktu.jadwal.data.subuh}</td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
                         <td>Dzuhur</td>
                         <td>${waktu.jadwal.data.dzuhur}</td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
                         <td>Ashar</td>
                         <td>${waktu.jadwal.data.ashar}</td>
                     </tr>
                     <tr>
-                        <th scope="row">4</th>
                         <td>Maghrib</td>
                         <td>${waktu.jadwal.data.maghrib}</td>
                     </tr>
                     <tr>
-                        <th scope="row">5</th>
                         <td>Isya</td>
                         <td>${waktu.jadwal.data.isya}</td>
                     </tr>
@@ -108,7 +94,7 @@ const surat = () => {
                     width: 100%; 
                     background-color: #4CAF50;
                     height:100px;
-                    border-radius: 30px;
+                    border-radius: 20px;
                 }
                 .nomor h4 {
                     color:white;
@@ -117,8 +103,8 @@ const surat = () => {
                     color:black;
                 }
             </style>
-            <a class="col s6 m3" href="./surah.html?nomor=${data.nomor}">
-                <div class="card z-depth-1 hoverable"> 
+            <a class="col s6 m4 l3" href="./view.html?id=${data.nomor}">
+                <div class="card z-depth-1 hoverable" data-aos="slide-right"> 
                     <div class="row">
                         <div class="col s4 m4 nomor" >
                             <center><h4>${data.nomor}</h4></center>

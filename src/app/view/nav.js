@@ -1,4 +1,4 @@
-import {waktuSolat,surat} from '../api/home_api.js';
+import {waktuSolat,surat} from './home_api.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     // Activate sidebar nav
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         };
-        xhttp.open("GET", "styles/view/nav.html", true);
+        xhttp.open("GET", "app/view/nav.html", true);
         xhttp.send();
     }
 });
@@ -61,6 +61,6 @@ function loadPage(page) {
             }
         }
     };
-    xhttp.open("GET", "styles/pages/" + page + ".html", true);
+    xhttp.open("GET", "app/pages/" + page + ".html", true);
     xhttp.send();
 }

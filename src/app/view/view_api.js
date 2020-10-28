@@ -1,9 +1,8 @@
-import { baseUrl, status, json, error } from './api_config.js';
+import { baseUrl, status, json, error } from '../config/api_config.js';
 
 const urlParams = new URLSearchParams(window.location.search);
-const idParam = urlParams.get("nomor");
+const idParam = urlParams.get("id");
 
-//menampilkan ayat yang dibatasi 10 ayat setiap pemanggilan
 const ayatbyid = () => {
     fetch(`${baseUrl}/quran/format/json/surat/${idParam}/ayat/1-10/bahasa/ar`)
     .then(status)
@@ -18,8 +17,8 @@ const ayatbyid = () => {
         configayat.ar.forEach( (data) => {
             ayat.innerHTML += `
                 <tr>
-                    <th scope="row">${data.ayat}</th>
-                    <td class="right-align">${data.teks}</td>
+                    <td class="right-align"><h5>${data.teks}<h5></td>
+                    <td scope="row">${data.ayat}</td>
                 </tr>
             `; 
         });
