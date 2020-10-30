@@ -5,12 +5,12 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        home:'./src/index.js',
-        view:'./src/view.js'
+        home: './src/index.js',
+        view: './src/view.js'
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].bundle.js"
+        filename: "bundle/[name].bundle.js"
     },
     module: {
         rules: [
@@ -33,27 +33,27 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/index.html"),
             filename: "index.html",
-            chunks:['home']
+            chunks: ['home']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/view.html"),
             filename: "view.html",
-            chunks:['view']
+            chunks: ['view']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/app/view/nav.html"),
             filename: "app/view/nav.html",
-            chunks:[]
+            chunks: []
         }),
-        // new workboxPlugin.GenerateSW({
-        //     swDest: 'sw.js',
-        //     clientsClaim: true,
-        //     skipWaiting: true,
-        //     runtimeCaching: [{
-        //       urlPattern: new RegExp('https://api.banghasan.com'),
-        //       handler: 'StaleWhileRevalidate'
-        //     }]
-        // }),
+        new workboxPlugin.GenerateSW({
+            swDest: 'sw.js',
+            clientsClaim: true,
+            skipWaiting: true,
+            runtimeCaching: [{
+                urlPattern: new RegExp('https://api.banghasan.com'),
+                handler: 'StaleWhileRevalidate'
+            }]
+        }),
         new CopyWebpackPlugin({
             patterns: [
                 {

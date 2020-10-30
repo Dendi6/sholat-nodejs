@@ -9,6 +9,7 @@ membaca cerita muslim
 ---
 
 ## Download
+
 untuk memulai projek lakukan clone. dengan cara
 
 > git clone https://github.com/dendi6/sholat.git
@@ -16,6 +17,7 @@ untuk memulai projek lakukan clone. dengan cara
 saat projeck sudah di clone lakukan instalasi npm dengan cara
 
 ## Memulai
+
 saat projeck sudah di clone lakukan instalasi npm dengan cara
 
 > npm install
@@ -23,6 +25,7 @@ saat projeck sudah di clone lakukan instalasi npm dengan cara
 ## Menjalankan
 
 Menjalankan projeck dapat dilakukan dengan 2 cara
+
 ```
   npm run build
   npm run start-dev
@@ -31,13 +34,14 @@ Menjalankan projeck dapat dilakukan dengan 2 cara
 ## fitur yang di sediakan
 
 1. Menampilkan waktu solat
-2. Menampilkan Al-quran,
-3. Menampilkan ayat Al-quran
-
+2. Menampilkan Kompas,
+3. Menampilkan Al-quran,
+4. Menampilkan ayat Al-quran
 
 ## Menggunakan Github Pages
 
 Menggunakan github pages.
+
 > npm install gh-pages
 
 saat paket sudah selesai tambahkan homepage di berkas <b>package.json</b>
@@ -45,24 +49,29 @@ saat paket sudah selesai tambahkan homepage di berkas <b>package.json</b>
 > "homepage" : "https://namagithub.github.io/namarepisitori/"
 
 masih pada <b>package.json</b> tambahkan kata seperti ini di bagian script
+
 ```
-  "predeploy" : "npm run build",</br>
+  "predeploy" : "npm run build"
   "deploy" : "gh-pages -d dist"
 ```
+
 langkah terakhir dapat dilakukan dengan perintah
 
 > npm install gh-pages
 
 saat paket sudah selesai tambahkan homepage di berkas <b>package.json</b>
+
 > "homepage" : "https://namagithub.github.io/namarepisitori/"
 
 masih pada <b>package.json</b> tambahkan kata seperti ini di bagian script
+
 ```
   "predeploy" : "npm run build",
   "deploy" : "gh-pages -d dist"
 ```
 
 langkah terakhir dapat dilakukan dengan perintah
+
 > npm run deploy
 
 ---

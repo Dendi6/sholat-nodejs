@@ -1,13 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Raleway:wght@800&display=swap");
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 @import "materialize-css/dist/css/materialize.min.css";
 @import "aos/dist/aos.css";
 
+body {
+  font-family: "Alata", sans-serif;
+}
+
 .bold {
   font-family: "Raleway", sans-serif;
+}
+
+.primary-color {
   color: #4caf50;
 }
 
@@ -28,21 +35,19 @@
 .mt-3 {
   margin-top: 30px;
 }
-
-.mt-2 {
-  margin-top: 20px;
-}
 /* end margin */
 
-.card {
-  border-radius: 20px;
-  height: 100px;
+/* radius */
+.radius-1 {
+  border-radius: 10px;
 }
+
+.radius-2 {
+  border-radius: 20px;
+}
+
+/* end radius */
 
 .img-res {
   width: 100%;
-}
-
-.color {
-  background-color: #6dce80;
 }
