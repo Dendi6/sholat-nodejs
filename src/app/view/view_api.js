@@ -6,9 +6,9 @@ const urlParams = new URLSearchParams(window.location.search);
 const idParam = urlParams.get("id");
 const type = urlParams.get("type");
 
-kompas()
-
 console.log(type);
+
+const compas = kompas();
 
 if (type == "kompas") {
     const kompas = () => {
@@ -23,10 +23,10 @@ if (type == "kompas") {
             </section>
         `;
     }
-    kompas();
 
     document.addEventListener("DOMContentLoaded", () => {
         kompas();
+        return compas;
     });
 
 } else if (type == "map") {
